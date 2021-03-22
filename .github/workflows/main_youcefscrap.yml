@@ -15,13 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-    - name: run test
-      run: python ./test/test.py
+
 
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
         python-version: '3.8'
+    - name: run test
+      run: python ./test/test.py
+    - name: install pytest
+      run: python install pytest
 
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
