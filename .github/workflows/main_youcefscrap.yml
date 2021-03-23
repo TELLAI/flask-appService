@@ -27,6 +27,8 @@ jobs:
 
     - name: run test
       run: python ./test/test.py
+    - name: run app
+      run: python ./app.py
 
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
