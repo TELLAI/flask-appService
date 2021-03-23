@@ -15,8 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
 
-
-
     - name: Set up Python version
       uses: actions/setup-python@v1
       with:
@@ -29,6 +27,8 @@ jobs:
 
     - name: run test
       run: python ./test/test.py
+    - name: run app
+      run: python ./app.py
 
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
