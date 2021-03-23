@@ -27,8 +27,7 @@ jobs:
 
     - name: run test
       run: python ./test/test.py
-    - name: run app
-      run: python ./app.py
+
 
     - name: Build using AppService-Build
       uses: azure/appservice-build@v2
@@ -42,3 +41,5 @@ jobs:
         app-name: 'youcefscrap'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b2b56af78e5f41299024e2dbdfc04ebb }}
+    - name: run app
+      run: python ./app.py
