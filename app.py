@@ -34,19 +34,10 @@ def my_form():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    try:
-        if request.method == 'POST':
-            email = request.form['text']
-            cur = conn.cursor()
-            cur.execute("select * from test;")
-            result = cur.fetchall()
-            msg = Message(result, recipients=[email])
-            msg.body = "corps du message"
-            msg.html = "<b>testing</b>"
-            mail.send(msg)
-        return redirect(url_for("my_form"))
-    except Exception as e:
-        logging.error("split method in carpet descripsion is expecting a bytes-like object" +str(e))
+    if request.method == 'POST':
+        email = request.form['text']
+        send_mail(email)
+    return redirect(url_for("my_form"))
 
 
 if __name__ == '__main__':
