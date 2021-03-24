@@ -8,7 +8,7 @@ Le but est de communiquer entre la VM et la Web app azure.
 - Postgresql 
 - Flask
 - HTML 
-- Docker (together with Dockerfile and Docker compose) 
+- Docker 
 
 ## Deployment :pencil:
 
