@@ -5,8 +5,6 @@ from mail import send_mail
 import psycopg2
 
 app = Flask(__name__)
-app.config.from_object(Config)
-mail = Mail(app)
 
 logging.basicConfig(filename = "journal.log", level= logging.DEBUG, 
                     format='%(asctime)s - %(name)s -%(levelname)s - %(message)s')
