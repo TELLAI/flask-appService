@@ -15,6 +15,7 @@ Le but est de communiquer entre la VM et la Web app azure.
 ### 1) Passage par Gitactions et la CI de Git:
 - Créer une Web App et la configurer pour la relier à notre repository Git sur Github.
 - Pour cela:
+
         - Aller dans l'onglet Deployment Center
 
         - onglet Settings
