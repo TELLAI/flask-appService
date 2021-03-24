@@ -1,6 +1,6 @@
 import logging
 from logging import FileHandler
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect, url_for, jsonify
 from mail import send_mail
 import psycopg2
 
@@ -22,22 +22,17 @@ def my_form():
     return render_template('index.html')
 
 
-# @app.route('/send')
-# def sendMail():
-#     msg = Message("salut", recipients=["tellaiyt@gmail.com"])
-#     msg.body = "corps du message"
-#     msg.html = "<b>testing</b>"
-#     mail.send(msg)
-#     return "Bravo"
-
 @app.route('/', methods=['POST'])
-def my_form_post():
+def sendMail():
     if request.method == 'POST':
         email = request.form['text']
-        send_mail(email)
+        cur = conn.cursor()
+        cur.execute("select * from test;")
+        result = cur.fetchall()
+        cur.close()
+        send_mail(result[0][0], email)
     return redirect(url_for("my_form"))
 
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=3200, debug=True)
-    
