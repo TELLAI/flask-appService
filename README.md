@@ -42,6 +42,20 @@ Le but est de communiquer entre la VM et la Web app azure.
 - Taper cette commande: az webapp up --sku B1 --name <app-name>
 - Azure va se charger de créer la Web App et run le script app.py
 
+## Configuration Postgresql sur la VM:
+
+- Afin que la web App puissent se connecter à postgresql de la VM :
+        
+        - Décommenter la ligne localhost = "*" dans le fichier postgres.conf
+        
+        - rajouter host   all   all 0.0.0.0/0     md5 dans le fichier pg_hba.conf
+        
+        - restart psql
+        
+        - set un password à l'utilisateur postgres
+        
+        - rajouter l'adresse IP de la VM dans le script flask
+
 ## Next step :pencil2:
 
  - [ ] Ajouter mon scrapper
