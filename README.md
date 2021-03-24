@@ -16,9 +16,13 @@ Le but est de communiquer entre la VM et la Web app azure.
 - Créer une Web App et la configurer pour la relier à notre repository Git sur Github.
 - Pour cela:
         - Aller dans l'onglet Deployment Center
+
         - onglet Settings
+
         - Dans le menu déroulant source choisir github
+
         - La plateforme va nous créer une pré-configuration à rajouter dans le workflow de notre app.
+
 - Dans le fichier YML de notre workflows ajouter la préconfiguration azure pour deployer sur la Web App.
 - Pusher les fichiers sur le repo git et git actions va s'occuper de déployer sur la web App
 
