@@ -48,7 +48,7 @@ Le but est de communiquer entre la VM et la Web app azure.
         
         - Décommenter la ligne localhost = "*" dans le fichier postgres.conf
         
-        - rajouter host   all   all 0.0.0.0/0     md5 dans le fichier pg_hba.conf
+        - rajouter (host   all   all 0.0.0.0/0     md5) dans le fichier pg_hba.conf
         
         - restart psql
         
